@@ -1,12 +1,12 @@
 <template>
   <div class="hello">
-    <button @click="getUsers">API TEST No.1</button>
+    <button @click="requestApi">API TEST</button>
     <p>{{ msg }}</p>
    </div>
 </template>
 
 <script>
-import api from '@/api/api.js'
+import api from '@/api/api'
 
 export default {
   name: 'HelloWorld',
@@ -16,10 +16,11 @@ export default {
     }
   },
   methods: {
-    getUsers() {
-      api.then(response => {
-        this.$data.msg =  response.statusText
-      })
+    requestApi() {
+      api
+        .then(response => {
+          this.msg =  response.statusText
+        })
     }
   }
 }
