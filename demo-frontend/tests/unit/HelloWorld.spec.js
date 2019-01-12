@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import sinon from 'sinon'
 import { shallowMount } from '@vue/test-utils'
 
-import HelloWorld from '@/components/HelloWorld'
+import HelloWorld from '@/components/organisms/HelloWorld.vue'
 import axios from 'axios'
 
 describe('HelloWorld.vue', () => {
