@@ -19,8 +19,8 @@ export default {
 
   methods: {
     async requestApi () {
-      const res = await api.get('https://api.github.com')
-      this.msg = res.statusText
+      const res = await api.get('http://localhost:3000/account')
+      this.msg = res.data.message
     }
   }
 }
