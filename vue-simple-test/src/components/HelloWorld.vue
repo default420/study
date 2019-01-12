@@ -4,19 +4,14 @@
       API TEST
     </button>
     <p>{{ msg }}</p>
-    <LineChart />
   </div>
 </template>
 
 <script>
 import api from '@/api/api'
-import LineChart from './LineChart.vue'
 
 export default {
   name: 'HelloWorld',
-  components: {
-    LineChart
-  },
 
   data () {
     return {
