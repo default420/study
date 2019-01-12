@@ -19,7 +19,7 @@ export default {
 
   methods: {
     async requestApi () {
-      const res = await api.get('http://localhost:3000/account')
+      const res = await api.get('/account')
       this.msg = res.data.message
     }
   }
