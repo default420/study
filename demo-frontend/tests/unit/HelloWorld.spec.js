@@ -6,12 +6,6 @@ import HelloWorld from '@/components/organisms/HelloWorld.vue'
 import axios from 'axios'
 
 describe('HelloWorld.vue', () => {
-  it('msg should render default', () => {
-    const msg = 'default'
-    const wrapper = shallowMount(HelloWorld)
-    expect(wrapper.text()).to.include(msg)
-  })
-
   it('requestApi() can get response data', () => {
     const msg = 'OK'
 
