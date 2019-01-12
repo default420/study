@@ -6,6 +6,7 @@
 
 <script>
 import Chart from 'chart.js'
+import ChartDataLabels from 'chartjs-plugin-datalabels'
 
 export default {
   data () {
@@ -25,6 +26,9 @@ export default {
             25,
             50
           ],
+          datalabels: {
+            align: 'end'
+          },
           fill: false
         }]
       },
@@ -57,6 +61,7 @@ export default {
     let ctx = document.getElementById('sample')
     this.chart = new Chart(ctx, {
       type: 'line',
+      plugins: [ChartDataLabels],
       data: this.data,
       options: this.options
     })
