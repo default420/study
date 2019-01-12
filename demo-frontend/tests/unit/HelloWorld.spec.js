@@ -9,7 +9,7 @@ describe('HelloWorld.vue', () => {
   it('requestApi() can get response data', () => {
     const msg = 'OK'
 
-    sinon.stub(axios, 'get').returns(Promise.resolve({ 'statusText': 'OK' }))
+    sinon.stub(axios, 'get').returns(Promise.resolve({ 'message': msg }))
     const wrapper = shallowMount(HelloWorld)
 
     wrapper.find('button').trigger('click')
