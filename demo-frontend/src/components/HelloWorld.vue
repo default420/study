@@ -13,11 +13,9 @@ import api from '@/api/api'
 export default {
   name: 'HelloWorld',
 
-  data () {
-    return {
-      msg: 'default'
-    }
-  },
+  data: () => ({
+    msg: 'default'
+  }),
 
   methods: {
     requestApi () {
