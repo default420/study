@@ -1,5 +1,7 @@
 import axios from 'axios'
 
-const api = axios.get('https://api.github.com')
+const api = axios.create({
+  timeout: 2000
+})
 
 export default api

@@ -21,7 +21,7 @@ export default {
 
   methods: {
     requestApi () {
-      api
+      api.get('https://api.github.com')
         .then(response => {
           this.msg = response.statusText
         })
