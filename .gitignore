@@ -19,3 +19,10 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# spring boot project
+bin/
+**.classpath
+**.gradle/
+**.project
+**.settings
