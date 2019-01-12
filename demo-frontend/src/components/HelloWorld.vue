@@ -18,11 +18,9 @@ export default {
   }),
 
   methods: {
-    requestApi () {
-      api.get('https://api.github.com')
-        .then(response => {
-          this.msg = response.statusText
-        })
+    async requestApi () {
+      const res = await api.get('https://api.github.com')
+      this.msg = res.statusText
     }
   }
 }
