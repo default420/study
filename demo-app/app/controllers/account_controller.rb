@@ -1,5 +1,6 @@
 class AccountController < ApplicationController
   def index
-    render json: {'message': 'example'}
+    @account = Account.first
+    render json: @account
   end
 end

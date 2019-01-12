@@ -13,7 +13,7 @@ describe AccountController, type: :request do
 
       it "response data is expected data" do
         json = JSON.parse(response.body)
-        expect(json['message']).to eq("example")
+        expect(json['username']).to eq("sample")
       end
   end
 end
