@@ -19,8 +19,12 @@ export default {
 
   methods: {
     async requestApi () {
-      const res = await api.get('/account')
-      this.msg = res.data.username
+      try {
+        const res = await api.get('/account')
+        this.msg = res.data.username
+      } catch (error) {
+        this.msg = error
+      }
     }
   }
 }
