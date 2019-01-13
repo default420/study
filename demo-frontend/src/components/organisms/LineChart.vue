@@ -18,6 +18,7 @@ export default {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [{
         label: 'Example Dataset',
+        backgroundColor: 'rgb(54, 162, 235)',
         borderColor: 'rgb(54, 162, 235)',
         data: [
           20,
@@ -50,6 +51,10 @@ export default {
         }],
         yAxes: [{
           display: true,
+          ticks: {
+            beginAtZero: true,
+            stepSize: 5
+          },
           scaleLabel: {
             display: true,
             labelString: 'Value'
