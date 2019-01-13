@@ -1,6 +1,6 @@
 <template>
   <div>
-    <canvas id="sample" />
+    <canvas :id="ctx" />
   </div>
 </template>
 
@@ -13,6 +13,7 @@ export default {
 
   data: () => ({
     chart: null,
+    ctx: 'chart',
     data: {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [{
@@ -59,8 +60,7 @@ export default {
   }),
 
   mounted () {
-    let ctx = document.getElementById('sample')
-    this.chart = new Chart(ctx, {
+    this.chart = new Chart(this.ctx, {
       type: 'line',
       plugins: [ChartDataLabels],
       data: this.data,
