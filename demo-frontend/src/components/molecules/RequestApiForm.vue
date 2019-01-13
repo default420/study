@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Button @handleEvent="requestApi">
+    <Button @handleEvent="$emit('requestApi')">
       API TEST
     </Button>
     <Message :msg="message" />
@@ -23,12 +23,6 @@ export default {
     message: {
       type: String,
       default: null
-    }
-  },
-
-  methods: {
-    requestApi () {
-      this.$emit('requestApi')
     }
   }
 

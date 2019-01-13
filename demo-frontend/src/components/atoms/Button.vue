@@ -1,17 +1,11 @@
 <template>
-  <v-btn @click="handleEvent">
+  <v-btn @click="$emit('handleEvent')">
     <slot />
   </v-btn>
 </template>
 
 <script>
 export default {
-  name: 'Button',
-
-  methods: {
-    handleEvent () {
-      this.$emit('handleEvent')
-    }
-  }
+  name: 'Button'
 }
 </script>
