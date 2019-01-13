@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <button @click="requestApi">
+    <v-btn @click="requestApi">
       API TEST
-    </button>
+    </v-btn>
     <p>{{ msg }}</p>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   methods: {
     async requestApi () {
       const res = await api.get('/account')
-      this.msg = res.data.message
+      this.msg = res.data.username
     }
   }
 }
