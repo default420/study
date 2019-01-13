@@ -1,7 +1,7 @@
 <template>
   <div>
     <RequestApiForm
-      @requestApi="requestApi"
+      @requestApi="requestData"
       :message="text"
     />
   </div>
@@ -12,7 +12,7 @@ import RequestApiForm from '@/components/molecules/RequestApiForm'
 import api from '@/api/api'
 
 export default {
-  name: 'HelloWorld',
+  name: 'HomeForum',
 
   components: {
     RequestApiForm
@@ -23,12 +23,12 @@ export default {
   }),
 
   methods: {
-    async requestApi () {
+    async requestData () {
       try {
         const res = await api.get('/account')
         this.text = res.data.username
       } catch (error) {
-        this.text = error
+        this.text = error.response.status.toString()
       }
     }
   }

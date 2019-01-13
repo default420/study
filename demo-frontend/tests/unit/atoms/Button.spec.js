@@ -1,25 +1,32 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
+import Vue from 'vue'
 import Vuetify from 'vuetify'
 
 import Button from '@/components/atoms/Button'
+
+// avoid warning message by Vuetify
+Vue.use(Vuetify, {
+  iconfont: 'md'
+})
 
 describe('Button.vue', () => {
   let wrapper
   const slot = 'Button Test'
 
   beforeAll(() => {
-    const localVue = createLocalVue()
-    localVue.use(Vuetify, {})
-
     wrapper = mount(Button, {
-      localVue,
       slots: {
         default: slot
       }
     })
   })
 
-  it('default slot message is excepted', () => {
+  afterAll(() => {
+    wrapper.destroy()
+  })
+
+  it('mount correctly.', () => {
+    expect(wrapper.name()).toBe('Button')
     expect(wrapper.find('button').text()).toBe(slot)
   })
 
